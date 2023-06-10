@@ -1,0 +1,32 @@
+<div class="container">
+  <h1>Angular 12 CRUD Example- ItSolutionStuff.com</h1>
+  <nav>
+    <button class="btn-primary btn-success" routerLink="/create">Create New Post</button>
+  </nav>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Title</th>
+        <th scope="col">Body</th>
+        <th scope="col" width="220px">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of post">
+
+        <td scope="row">{{item.id}}</td>
+        <td>{{item.title}}</td>
+        <td>{{item.body}}</td>
+        <td>
+          <a href="#" routerLink="/view/{{item.id}}" class="btn btn-info">View</a>
+          <a href="#" routerLink="/edit/{{item.id}}" class="btn btn-primary">Edit</a>
+
+          <button type="button" (click)="deletePost(item.id)" class="btn btn-danger">Delete</button>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
